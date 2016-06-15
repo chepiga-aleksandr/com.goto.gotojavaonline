@@ -1,4 +1,4 @@
-package ua.goit.goitonline.fileslist;
+package ua.goit.goitonline.module3.filelist;
 
 import java.util.List;
 

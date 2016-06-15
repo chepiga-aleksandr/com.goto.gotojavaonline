@@ -1,11 +1,11 @@
-package ua.goit.goitonline.musicshop;
+package ua.goit.goitonline.module3.musicshop;
 
 import java.util.List;
 
 public class MusicalInstrument {
     private List<Guitar> guitars;
     private List<Piano> pianoes;
-    private List<Trumpet> trumpets'
+    private List<Trumpet> trumpets;
 
     public List<Guitar> getGuitars() {
         return guitars;
