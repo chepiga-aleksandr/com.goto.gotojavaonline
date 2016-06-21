@@ -8,7 +8,11 @@ public class Distance {
 
         baseOfTheTriangle = coordinatex2 - coordinatex1;
         heightOfTheTriangle = coordinatey2 - coordinatey1;
-        distance = Math.sqrt(baseOfTheTriangle*baseOfTheTriangle + heightOfTheTriangle*heightOfTheTriangle);
+
+        double a = Math.pow(baseOfTheTriangle, 2);
+        double b = Math.pow(heightOfTheTriangle, 2);
+
+        distance = Math.sqrt(a + b);
 
 
         System.out.println("Расстояние между точками равно " + distance);
