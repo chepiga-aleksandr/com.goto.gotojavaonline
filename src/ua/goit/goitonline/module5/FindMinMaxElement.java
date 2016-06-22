@@ -18,5 +18,6 @@ public class FindMinMaxElement {
             }
         }
         System.out.println("max = " + max + ";min = " + min);
+
     }
 }
