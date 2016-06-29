@@ -9,6 +9,7 @@ public class FindMinMaxElement {
         int max = intArray[0];
         int min = intArray[0];
 
+
         for (int i = 0; i < intArray.length; i++) {
             if (intArray[i] > max) {
                 max = intArray[i];
