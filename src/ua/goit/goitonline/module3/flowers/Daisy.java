@@ -1,5 +1,5 @@
 package ua.goit.goitonline.module3.flowers;
 
 
-public class Daisy {
+public class Daisy extends Flower {
 }

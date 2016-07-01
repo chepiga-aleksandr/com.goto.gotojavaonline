@@ -1,8 +1,9 @@
 package ua.goit.goitonline.module3.filelist;
 
+import java.io.File;
 import java.util.List;
 
-public class Directory {
+class Directory {
 
     private List<File> files;
 
