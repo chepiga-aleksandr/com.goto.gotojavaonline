@@ -13,6 +13,13 @@ public class Runner {
 
             System.out.println("Размеры аудиофайлов");
             audiofile.size();
+
+            Imgfile imgfile = new Imgfile();
+            fileSize = imgfile;
+
+            System.out.println("размеры картинок");
+            imgfile.size();
+
         }
     }
 }

@@ -4,8 +4,7 @@ import java.io.File;
 
 public class FileSize {
 
-        static String path;
-        int i;
+        static private String path;
         String[] list = new File(getPath()).list();
 
         public String getPath() {
@@ -14,10 +13,10 @@ public class FileSize {
 
     public void size() {
 
-        for (i = 0; i < list.length; i++) {
+        for (int i = 0; i < list.length; i++) {
 
             File f1 = new File(getPath() + list[i]);
-            System.out.println("Имя файла   " + list[i] + "     Размер файла     " + f1.length() + "  байт");
+            System.out.println("Имя файла   " + getPath() + list[i] + "     Размер файла     " + f1.length() + "  байт");
         }
     }
 }
