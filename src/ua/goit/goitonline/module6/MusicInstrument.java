@@ -1,6 +1,7 @@
 package ua.goit.goitonline.module6;
 
 abstract class MusicInstrument {
+
     public abstract String getType();
 
     @Override
