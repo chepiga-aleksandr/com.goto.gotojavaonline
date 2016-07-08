@@ -1,4 +1,4 @@
-package ua.goit.goitonline.module3.filelist;
+package main.goitonline.module3.filelist;
 
  public class Audiofile extends FileSize{
 

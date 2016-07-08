@@ -1,4 +1,4 @@
-package ua.goit.goitonline.module3.flowers;
+package main.goitonline.module3.flowers;
 
 class Rose extends Flower {
 
