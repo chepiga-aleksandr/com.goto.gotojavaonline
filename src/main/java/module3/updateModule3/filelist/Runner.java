@@ -47,7 +47,7 @@ public class Runner {
 
         switch (s1) {
             case "Yes":
-                OnDeleteDirectoryWithSubFolder.recursiveDelete(new File(OnDeleteDirectoryWithSubFolder.folder));
+                OnDeleteDirectory.recursiveDelete(new File(OnDeleteDirectory.folder));
                 break;
             case "No":
                 break;
