@@ -1,5 +1,7 @@
 package module5;
 
+import java.util.Arrays;
+
 public class SortArray {
     public static void main(String[] args) {
         int[] intArray = {5, 1, 7, -8, 3, 17, 9, 4, -9, 2, 15, 56, 29};
@@ -15,10 +17,10 @@ public class SortArray {
                 }
             }
         }
-        for (int element : intArray) {
-            System.out.println(element);
+//        For (int element : intArray) {
+            System.out.println(Arrays.toString(intArray));
         }
     }
-}
+
 
 
