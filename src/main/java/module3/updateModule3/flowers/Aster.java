@@ -1,4 +1,4 @@
-package eeee.module3.updateModule3.flowers;
+package module3.updateModule3.flowers;
 
 public class Aster extends Flower {
 

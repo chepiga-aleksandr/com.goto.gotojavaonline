@@ -1,4 +1,6 @@
-package eeee.module3.updateModule3.flowers;
+package module3.updateModule3.flowers;
+
+import module3.updateModule3.flowers.Rosebush;
 
 public class Runner {
 

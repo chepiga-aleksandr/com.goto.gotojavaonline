@@ -1,4 +1,4 @@
-package eeee.module3.musicshop;
+package module3.musicshop;
 
 public class Piano {
 }
