@@ -10,7 +10,7 @@ public class ArrayUtils {
     public static Scanner s = new Scanner(System.in);
 
     private static int[] createArray() {
-        System.out.println("Введите размер массива: ");
+        System.out.println("¬ведите размер массива: ");
         size = s.nextInt();
         return new int[size];
     }
@@ -28,7 +28,7 @@ public class ArrayUtils {
     static int[] inputArrayListManually() {
 
         array = createArray();
-        System.out.println("Введите элементы массива:");
+        System.out.println("¬ведите элементы массива:");
         for (int i = 0; i < array.length; i++) {
             array[i] = s.nextInt();
         }
