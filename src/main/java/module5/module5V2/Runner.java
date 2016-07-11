@@ -1,4 +1,4 @@
-package mod5;
+package module5.module5V2;
 
 import java.util.Arrays;
 import java.util.Random;
