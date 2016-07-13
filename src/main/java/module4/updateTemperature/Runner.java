@@ -8,9 +8,9 @@ public class Runner {
 
         System.out.println("Выберите вариант пробразования: C - Преобразовать Цельсий в Фаренгейт, " +
                 "F - Преобразовать Фаренгейт в Цельсий");
-        String variant = inputFromConsole.inputScanner().next();
+        String sc = inputFromConsole.inputScanner().next();
 
-        switch (variant) {
+        switch (sc) {
             case "C":
                 System.out.println("Введите значение температуры в градусах Цельсия:");
                 convertTemperature.convertToCelsius();
