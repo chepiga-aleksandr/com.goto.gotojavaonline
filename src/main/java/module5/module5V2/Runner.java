@@ -27,6 +27,7 @@ public class Runner {
                 System.out.println("Ведите размер массива: ");
 
                 int[] manuallyArray = inputArrayListManually();
+                
                 manuallyArray = ArrayUtils.sortCopyArray(manuallyArray);
                 System.out.println("Отсортированный массив:" + Arrays.toString(manuallyArray));
 
