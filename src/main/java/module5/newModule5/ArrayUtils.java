@@ -9,14 +9,13 @@ public class ArrayUtils {
     public static int[] array;
     public static Scanner s = new Scanner(System.in);
 
-    private static int[] createArray() {
+    static int[] createArray() {
         System.out.println("¬ведите размер массива: ");
         size = s.nextInt();
         return new int[size];
     }
 
     static int[] inputArrayListAuto() {
-        //int[] arrayAuto = createArray();
         array = createArray();
         for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * 100);
@@ -26,7 +25,6 @@ public class ArrayUtils {
     }
 
     static int[] inputArrayListManually() {
-
         array = createArray();
         System.out.println("¬ведите элементы массива:");
         for (int i = 0; i < array.length; i++) {
@@ -50,10 +48,7 @@ public class ArrayUtils {
     }
 
     static int[] sortCopyArray() {
-
         int[] sortedArray = (int[])array.clone();
-
-//        int[] sortedArray = Arrays.copyOf(array, size);
         Arrays.sort(sortedArray);
         return sortedArray;
     }
