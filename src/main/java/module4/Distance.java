@@ -14,7 +14,6 @@ public class Distance {
 
         distance = Math.sqrt(a + b);
 
-
         System.out.println("Расстояние между точками равно " + distance);
 
     }
