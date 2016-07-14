@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class ArrayUtils {
     public static MinMaxPair minMaxPair(int[] array) {
-
         int max = array[0];
         int min = array[0];
 
@@ -16,6 +15,7 @@ public class ArrayUtils {
                 min = array[i];
             }
         }
+
         return new MinMaxPair(min, max);
     }
 
