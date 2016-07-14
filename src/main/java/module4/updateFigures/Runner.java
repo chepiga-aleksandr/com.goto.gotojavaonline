@@ -1,16 +1,30 @@
 package module4.updateFigures;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
 public class Runner {
-    public static void main(String[] args) throws IOException {
 
-        ShapeUtil shape = new ShapeUtil();
-        Figure figure1 = shape.readConsole();
+    public static void main(String[] args) {
 
-        double calc = figure1.calc();
-        System.out.println(calc);
+        System.out.println("Выберите фигуру для расчета площади: 1-Треугольник, 2-Прямоугольник, 3-Круг");
+
+        int choice = InputFromConsole.readChoice();
+        if (choice == 1) {
+            Enum figure = Enum.Triangle;
+            System.out.println("Введите размер основания и высоты треугольника: ");
+            double result = figure.calculateArea();
+            System.out.println("Площадь - " + result);
+
+        } else if (choice == 2) {
+            Enum figure = Enum.Rectangle;
+            System.out.println("Введите размер основания и высоты прямоугольника: ");
+            double result = figure.calculateArea();
+            System.out.println("Площадь - " + result);
+
+        } else if (choice == 3) {
+            Enum figure = Enum.Circle;
+            System.out.println("Введите радиус круга ");
+            double result = figure.calculateArea();
+            System.out.println("Площадь - " + result);
+        }
     }
 }
+
