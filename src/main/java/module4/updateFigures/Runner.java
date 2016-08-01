@@ -11,18 +11,21 @@ public class Runner {
             Enum figure = Enum.Triangle;
             System.out.println("Введите размер основания и высоты треугольника: ");
             double result = figure.calculateArea();
+// Copy and Paste Programming:
             System.out.println("Площадь - " + result);
 
         } else if (choice == 2) {
             Enum figure = Enum.Rectangle;
             System.out.println("Введите размер основания и высоты прямоугольника: ");
             double result = figure.calculateArea();
+// Copy and Paste Programming:
             System.out.println("Площадь - " + result);
 
         } else if (choice == 3) {
             Enum figure = Enum.Circle;
             System.out.println("Введите радиус круга ");
             double result = figure.calculateArea();
+// Copy and Paste Programming:
             System.out.println("Площадь - " + result);
         }
     }

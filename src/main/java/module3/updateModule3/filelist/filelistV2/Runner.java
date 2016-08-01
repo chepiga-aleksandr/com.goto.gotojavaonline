@@ -36,12 +36,11 @@ public class Runner {
                 Directory.onDelete();
                 break;
             case "No":
-                //System.exit(1);
                 break;
             default:
                 break;
         }
-        System.out.println("Вы настиваете на удалении?, если да,то укажите Yes, если нет, то No:");
+        System.out.println("Вы настаиваете на удалении?, если да,то укажите Yes, если нет, то No:");
 
         String s1 = BUFFERED_READER.readLine();
 
