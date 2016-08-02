@@ -11,6 +11,7 @@ public class Runner {
     public static void main(String[] args) {
 
         TreeSet<Aster> asters = new TreeSet<>();
+
         asters.add(new Aster("Anna", "yellow", 10));
         asters.add(new Aster("Anna", "white", 10));
         asters.add(new Aster("Anna", "yellow", 70));
@@ -22,11 +23,11 @@ public class Runner {
         LinkedList<Flower> newBouquet = new LinkedList<Flower>();
 
         newBouquet.add(new Aster("Luna", "black", 3));
-        newBouquet.add(new Rose("Road", "white",5 ));
-        newBouquet.add(new Tulip("Elena", "pink",7));
+        newBouquet.add(new Rose("Road", "white", 5));
+        newBouquet.add(new Tulip("Elena", "pink", 7));
+
         System.out.println(newBouquet);
 
-        // задаем количество роз на кусте
         rosebush.setRoses(20);
 
         System.out.println(rosebush);
