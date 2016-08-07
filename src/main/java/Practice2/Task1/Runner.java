@@ -1,4 +1,5 @@
-package Practice2;
+package Practice2.Task1;
+
 public class Runner {
     private static String sumBase36(String input) {
         String BASEOFELEMENTS = "0123456789abcdefghijklmnopqrstuvwxyz";
@@ -6,7 +7,6 @@ public class Runner {
 
         long sum = 0;
         long count = 0;
-        // remove for
         for (String element : inputValue) {
             for (char letter : element.toCharArray()) {
                 for (int i = 0; i < (element.toCharArray()).length; i++) {
@@ -21,8 +21,8 @@ public class Runner {
         }
         return Long.toString(sum, 36);
     }
+
     public static void main(String[] args) {
-        System.out.println("What we have: " + sumBase36("aa,aa"));
-        System.out.println("What it should be: " + Integer.toString(370 + 370, 36));
+        System.out.println(sumBase36("aa,aa"));
     }
 }
