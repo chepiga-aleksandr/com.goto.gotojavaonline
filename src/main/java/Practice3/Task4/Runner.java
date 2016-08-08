@@ -1,26 +1,22 @@
 //package Practice3.Task4;
-//
 //public class Runner {
 //    public static void main(String[] args) {
-//        int[] x = {0, 0};  int[] h = {20, 10}; int[] w = {10, 20};
-//        int x0 = 0, x1 = 10, x2 = 20, y0 = 0, y1 = 20, y2 = 10, areaOfRectangle = 0;
-//        int xMax = 0, height = 0, width = 0;
-//        int i = 0;
-//        for (i = 0; i < x.length-1;){
-//
-//            if (h[i] > h[i+1]) {
-//                height = h[i];
-//                width = x[i];
+//        int[] massa = {0, 0, 0};
+//        int[] massb = {20, 40, 50};
+//        int[] massh = {20, 40, 30};
+//        int[] A = new int[massa.length];
+//        int[] B = new int [massa.length];
+//        int S = 0;
+//        for (int i = 0; i < massa.length; i++) {
+//            for (int z = i + 1; z < massa.length; z++) {
+//                if (massa[i] == massa[z]) {
+//                    if (massh[i] >= massh[z]) {
+//                        S = S + massh[i]*(massb[i]-massa[i]);
+//                    } S = S + massh[z]*(massb[i]-massa[i]);
+//                    continue;
+//                }
 //            }
-//            height = h[i+1]; width = x[i+1];
-//            areaOfRectangle =  h[i-1]*x[i];
-//
+//        }
+//        System.out.println(S);
 //    }
 //}
-//
-////Найти площадь, которую занимают N прямоугольников на плоскости.
-////У всех прямоугольников одна из сторон лежит на оси абсцис (X).
-////Дано три массива длиной N. В первом массиве Х -координата
-////нижней-левой вершины і-го прямоугольника, высота во втором,
-////ширина - в третьем. Все значения неотрицательные.
-////Пример:  X - [0, 0] H - [20, 10] W - [10, 20]. Ответ  - 300.
