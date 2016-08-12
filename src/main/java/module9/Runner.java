@@ -7,6 +7,9 @@ public class Runner {
 
     private static final List<Character> ALPHABET = new ArrayList<>();
 
+    public static StringBuilder ciphertext = new StringBuilder();
+    public static StringBuilder decryptedText = new StringBuilder();
+
     static {
         for (char c = 'a'; c <= 'z'; c++) {
             ALPHABET.add(c);
@@ -17,8 +20,6 @@ public class Runner {
         int n = ALPHABET.size();
         key = key % n;
 
-        StringBuilder ciphertext = new StringBuilder();
-
         for (int i = 0; i < inputText.length(); i++) {
             char c = inputText.charAt(i);
             int index = ALPHABET.indexOf(c);
@@ -28,19 +29,31 @@ public class Runner {
         return ciphertext.toString();
     }
 
-    public static String decrypt(String inputText, int key) {
+    public static String decrypt(StringBuilder ciphertext) {
         int n = ALPHABET.size();
-        key = key % n;
+        int KEY = 5;
+        KEY = KEY % n;
 
-        StringBuilder decryptedText = new StringBuilder();
-
-        for (int i = 0; i < inputText.length(); i++) {
-            char c = inputText.charAt(i);
+        for (int i = 0; i < ciphertext.length(); i++) {
+            char c = ciphertext.charAt(i);
             int index = ALPHABET.indexOf(c);
-            index = ((index - key) % n + n) % n;
+            index = ((index - KEY) % n + n) % n;
             decryptedText.append(ALPHABET.get(index));
         }
         return decryptedText.toString();
     }
+
+    public static void main(String[] args) {
+
+        System.out.println(encrypt("polymorphism", 5));
+
+        System.out.println();
+
+        System.out.println(decrypt(ciphertext));
+
+
+
+    }
+
 }
 

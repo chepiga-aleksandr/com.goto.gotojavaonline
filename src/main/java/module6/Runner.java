@@ -14,7 +14,6 @@ public class Runner {
     public static void main(String[] args) {
         System.out.println("Выберите метод создания массива: 1 - автоматический, 2 - ручной ввод");
 
-        Scanner sc = new Scanner(System.in);
         String sw = scanner.next();
         int ch = 0;
 

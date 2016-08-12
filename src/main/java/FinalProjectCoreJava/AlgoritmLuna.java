@@ -6,8 +6,8 @@ public class AlgoritmLuna {
 
         char[] chArray = card.toCharArray();
         int[] intArr = new int[chArray.length];
-        for (int i = 0; i <= chArray.length-1; i++) {
-            intArr[i] = Character.getNumericValue(chArray[chArray.length-1-i]);
+        for (int i = 0; i <= chArray.length - 1; i++) {
+            intArr[i] = Character.getNumericValue(chArray[chArray.length - 1 - i]);
         }
         int sum = 0;
 
@@ -22,12 +22,13 @@ public class AlgoritmLuna {
         }
         return sum;
     }
-    public static int getControlNumber (int sum) {
 
-        if (sum%10==0){
+    public static int getControlNumber(int sum) {
+
+        if (sum % 10 == 0) {
 
             return 0;
 
-        }else return sum%10;
+        } else return sum % 10;
     }
 }
