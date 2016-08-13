@@ -35,7 +35,7 @@ public class CalculationOfCoordinate {
         CalculationOfCoordinate.y2 = y2;
     }
 
-    public static double resultOgCalc() {
+    public static double resultOfCalc() {
         result = Math.sqrt(Math.pow((getX2() - getX1()), 2) + Math.pow((getY2() - getY1()), 2));
         return result;
     }
