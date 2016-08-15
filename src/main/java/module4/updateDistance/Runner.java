@@ -7,6 +7,6 @@ public class Runner {
 
         InputFromConsole.readOfData();
 
-        System.out.println("Расстояние между точками: " + CalculationOfCoordinate.resultOgCalc());
+        System.out.println("Расстояние между точками: " + CalculationOfCoordinate.resultOfCalc());
     }
 }

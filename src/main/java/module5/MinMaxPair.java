@@ -1,4 +1,4 @@
-package module5.module5V2;
+package module5;
 
 public class MinMaxPair {
 
