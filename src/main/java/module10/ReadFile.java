@@ -7,30 +7,18 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class ReadFile {
-    public ReadFile() {
-    }
-
     public static String read(String fileName) throws FileNotFoundException {
         StringBuilder readFile = new StringBuilder();
+
         exists(fileName);
 
-        try {
-            BufferedReader e = new BufferedReader(new FileReader(fileName));
-
-            try {
-                String e1;
-                try {
-                    while((e1 = e.readLine()) != null) {
-                        readFile.append(e1);
-                    }
-                } catch (IOException var8) {
-                    var8.printStackTrace();
-                }
-            } finally {
-                e.close();
+        try (BufferedReader e = new BufferedReader(new FileReader(fileName))) {
+            String e1;
+            while ((e1 = e.readLine()) != null) {
+                readFile.append(e1);
             }
-        } catch (IOException var10) {
-            throw new RuntimeException(var10);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
         }
 
         return readFile.toString();
@@ -38,7 +26,8 @@ public class ReadFile {
 
     private static void exists(String fileName) throws FileNotFoundException {
         File file = new File(fileName);
-        if(!file.exists()) {
+
+        if (!file.exists()) {
             throw new FileNotFoundException(file.getName());
         }
     }
