@@ -1,4 +1,4 @@
-package Practice3.taks6;
+package Practice3.Task6;
 
 import java.util.*;
 
