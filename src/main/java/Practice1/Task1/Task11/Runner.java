@@ -1,7 +1,5 @@
 package Practice1.Task1.Task11;
 
-import Practice5.R;
-
 public class Runner {
 
     public static void main(String[] args) {
