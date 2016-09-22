@@ -1,25 +1,19 @@
 package Practice3.Task5;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
 
 public class BinaryHeap {
 
-    private static ArrayList<Integer> binaryHeapArray = new ArrayList<>();
+    private ArrayList<Integer> binaryHeapArray;
 
-    public static List<Integer> buildHeap(int size) {
+    int heapSize;
 
-        Random random = new Random();
-        for (int i = 0; i < size; i++) {
+    private BinaryHeap(int size) {
 
-            binaryHeapArray.add(random.nextInt(size));
-        }
-        return binaryHeapArray;
+        binaryHeapArray = new ArrayList<>(size);
     }
 
-    public void insertValue(int value) {
+    public void insert(int value) {
 
         binaryHeapArray.add(value);
 
@@ -31,9 +25,9 @@ public class BinaryHeap {
 
             int temp = binaryHeapArray.get(i);
 
-            binaryHeapArray.add(binaryHeapArray.get(parent));
+            binaryHeapArray.set(i, binaryHeapArray.get(parent));
 
-            binaryHeapArray.add(temp);
+            binaryHeapArray.set(parent, temp);
 
             i = parent;
 
@@ -47,7 +41,6 @@ public class BinaryHeap {
         int leftChild;
         int rightChild;
         int largestChild;
-        int heapSize;
 
 
         for (; ; ) {
@@ -69,23 +62,46 @@ public class BinaryHeap {
             }
 
             int temp = binaryHeapArray.get(i);
-            binaryHeapArray.add(binaryHeapArray.get(largestChild));
-            binaryHeapArray.add(temp);
+            binaryHeapArray.set(i, binaryHeapArray.get(largestChild));
+            binaryHeapArray.set(largestChild, temp);
             i = largestChild;
         }
     }
 
+    public int getMax() {
+        int result = binaryHeapArray.get(0);
+        binaryHeapArray.set(0, binaryHeapArray.get(heapSize - 1));
+        binaryHeapArray.remove(heapSize - 1);
+        return result;
+    }
+
     public static void main(String[] args) {
 
-        BinaryHeap binaryHeap = new BinaryHeap();
+        BinaryHeap binaryHeap = new BinaryHeap(10);
 
-        binaryHeap.binaryHeapArray = (ArrayList<Integer>) buildHeap(10);
+        binaryHeap.insert(20);
+        binaryHeap.insert(11);
+        binaryHeap.insert(15);
+        binaryHeap.insert(6);
+        binaryHeap.insert(9);
+        binaryHeap.insert(7);
+        binaryHeap.insert(8);
+        binaryHeap.insert(1);
+        binaryHeap.insert(3);
+        binaryHeap.insert(5);
 
-        System.out.println(binaryHeapArray);
+//        binaryHeap.binaryHeapArray.forEach(value -> System.out.println(value + " "));
 
-        binaryHeap.insertValue(34);
+binaryHeap.getMax();
 
-        System.out.println(binaryHeapArray);
+//        System.out.println(binaryHeap.getMax());
+
+        binaryHeap.heapify(0);
+
+        System.out.println(binaryHeap);
+
+        System.out.println();
 
     }
 }
+
