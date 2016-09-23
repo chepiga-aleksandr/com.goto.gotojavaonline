@@ -6,8 +6,6 @@ public class BinaryHeap {
 
     private ArrayList<Integer> binaryHeapArray;
 
-    int heapSize;
-
     private BinaryHeap(int size) {
 
         binaryHeapArray = new ArrayList<>(size);
@@ -48,12 +46,11 @@ public class BinaryHeap {
             leftChild = 2 * i + 1;
             rightChild = 2 * i + 2;
             largestChild = i;
-            heapSize = 10;
 
-            if (leftChild < heapSize && binaryHeapArray.get(leftChild) > binaryHeapArray.get(largestChild)) {
+            if (leftChild < binaryHeapArray.size() && binaryHeapArray.get(leftChild) > binaryHeapArray.get(largestChild)) {
                 largestChild = leftChild;
             }
-            if (rightChild < heapSize && binaryHeapArray.get(rightChild) > binaryHeapArray.get(largestChild)) {
+            if (rightChild < binaryHeapArray.size() && binaryHeapArray.get(rightChild) > binaryHeapArray.get(largestChild)) {
                 largestChild = rightChild;
             }
 
@@ -70,8 +67,11 @@ public class BinaryHeap {
 
     public int getMax() {
         int result = binaryHeapArray.get(0);
-        binaryHeapArray.set(0, binaryHeapArray.get(heapSize - 1));
-        binaryHeapArray.remove(heapSize - 1);
+
+        binaryHeapArray.set(0, binaryHeapArray.get(binaryHeapArray.size() - 1));
+
+        binaryHeapArray.remove(binaryHeapArray.size() - 1);
+
         return result;
     }
 
@@ -90,18 +90,15 @@ public class BinaryHeap {
         binaryHeap.insert(3);
         binaryHeap.insert(5);
 
-//        binaryHeap.binaryHeapArray.forEach(value -> System.out.println(value + " "));
-
-binaryHeap.getMax();
-
-//        System.out.println(binaryHeap.getMax());
-
-        binaryHeap.heapify(0);
-
-        System.out.println(binaryHeap);
+        binaryHeap.binaryHeapArray.forEach(value -> System.out.print(value + " "));
 
         System.out.println();
 
+        System.out.println(binaryHeap.getMax());
+
+        binaryHeap.heapify(0);
+
+        binaryHeap.binaryHeapArray.forEach(value -> System.out.print(value + " "));
     }
 }
 
