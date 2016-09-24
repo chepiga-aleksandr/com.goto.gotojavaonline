@@ -21,22 +21,28 @@ public class Runner {
         key = key % n;
 
         for (int i = 0; i < inputText.length(); i++) {
+
             char c = inputText.charAt(i);
             int index = ALPHABET.indexOf(c);
+
             index = (index + key) % n;
+
             ciphertext.append(ALPHABET.get(index));
         }
         return ciphertext.toString();
     }
 
     public static String decrypt(StringBuilder ciphertext) {
+
         int n = ALPHABET.size();
         int KEY = 5;
         KEY = KEY % n;
 
         for (int i = 0; i < ciphertext.length(); i++) {
+
             char c = ciphertext.charAt(i);
             int index = ALPHABET.indexOf(c);
+
             index = ((index - KEY) % n + n) % n;
             decryptedText.append(ALPHABET.get(index));
         }
@@ -50,10 +56,6 @@ public class Runner {
         System.out.println();
 
         System.out.println(decrypt(ciphertext));
-
-
-
     }
-
 }
 

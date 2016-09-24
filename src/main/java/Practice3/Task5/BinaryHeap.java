@@ -23,7 +23,6 @@ public class BinaryHeap {
     private void insertValue(int value) {
 
         binaryHeapArray.add(value);
-        
 
         int i = binaryHeapArray.size() - 1;
 
