@@ -7,21 +7,23 @@ import java.util.Random;
 
 public class BinaryHeap {
 
-    private static ArrayList<Integer> binaryHeapArray = new ArrayList<>();
+    private  ArrayList<Integer> binaryHeapArray = new ArrayList<>();
+    private  ArrayList<Integer> binaryHeapArray1 = new ArrayList<>();
 
-    public static List<Integer> buildHeap(int size) {
+    private ArrayList<Integer> buildHeap(int size) {
 
         Random random = new Random();
         for (int i = 0; i < size; i++) {
 
-            binaryHeapArray.add(random.nextInt(size));
+            binaryHeapArray.add(random.nextInt(50));
         }
         return binaryHeapArray;
     }
 
-    public void insertValue(int value) {
+    private void insertValue(int value) {
 
         binaryHeapArray.add(value);
+        
 
         int i = binaryHeapArray.size() - 1;
 
@@ -30,10 +32,12 @@ public class BinaryHeap {
         while (i > 0 && binaryHeapArray.get(parent) < binaryHeapArray.get(i)) {
 
             int temp = binaryHeapArray.get(i);
+            binaryHeapArray.set(i, binaryHeapArray.get(parent));
 
-            binaryHeapArray.add(binaryHeapArray.get(parent));
+///            binaryHeapArray.add(binaryHeapArray.get(parent));
+            binaryHeapArray.set(parent, temp);
 
-            binaryHeapArray.add(temp);
+            //binaryHeapArray.add(temp);
 
             i = parent;
 
@@ -76,16 +80,15 @@ public class BinaryHeap {
     }
 
     public static void main(String[] args) {
-
         BinaryHeap binaryHeap = new BinaryHeap();
 
-        binaryHeap.binaryHeapArray = (ArrayList<Integer>) buildHeap(10);
+        binaryHeap.binaryHeapArray = binaryHeap.buildHeap(10);
 
-        System.out.println(binaryHeapArray);
+        System.out.println(binaryHeap.binaryHeapArray);
 
         binaryHeap.insertValue(34);
 
-        System.out.println(binaryHeapArray);
+        System.out.println(binaryHeap.binaryHeapArray);
 
     }
 }
