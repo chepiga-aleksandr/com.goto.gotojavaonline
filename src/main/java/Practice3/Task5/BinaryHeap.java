@@ -1,26 +1,17 @@
 package Practice3.Task5;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Random;
 
 public class BinaryHeap {
 
-    private  ArrayList<Integer> binaryHeapArray = new ArrayList<>();
-    private  ArrayList<Integer> binaryHeapArray1 = new ArrayList<>();
+    private ArrayList<Integer> binaryHeapArray;
 
-    private ArrayList<Integer> buildHeap(int size) {
+    private BinaryHeap(int size) {
 
-        Random random = new Random();
-        for (int i = 0; i < size; i++) {
-
-            binaryHeapArray.add(random.nextInt(50));
-        }
-        return binaryHeapArray;
+        binaryHeapArray = new ArrayList<>(size);
     }
 
-    private void insertValue(int value) {
+    public void insert(int value) {
 
         binaryHeapArray.add(value);
 
@@ -31,12 +22,10 @@ public class BinaryHeap {
         while (i > 0 && binaryHeapArray.get(parent) < binaryHeapArray.get(i)) {
 
             int temp = binaryHeapArray.get(i);
+
             binaryHeapArray.set(i, binaryHeapArray.get(parent));
 
-///            binaryHeapArray.add(binaryHeapArray.get(parent));
             binaryHeapArray.set(parent, temp);
-
-            //binaryHeapArray.add(temp);
 
             i = parent;
 
@@ -50,7 +39,6 @@ public class BinaryHeap {
         int leftChild;
         int rightChild;
         int largestChild;
-        int heapSize;
 
 
         for (; ; ) {
@@ -58,12 +46,11 @@ public class BinaryHeap {
             leftChild = 2 * i + 1;
             rightChild = 2 * i + 2;
             largestChild = i;
-            heapSize = 10;
 
-            if (leftChild < heapSize && binaryHeapArray.get(leftChild) > binaryHeapArray.get(largestChild)) {
+            if (leftChild < binaryHeapArray.size() && binaryHeapArray.get(leftChild) > binaryHeapArray.get(largestChild)) {
                 largestChild = leftChild;
             }
-            if (rightChild < heapSize && binaryHeapArray.get(rightChild) > binaryHeapArray.get(largestChild)) {
+            if (rightChild < binaryHeapArray.size() && binaryHeapArray.get(rightChild) > binaryHeapArray.get(largestChild)) {
                 largestChild = rightChild;
             }
 
@@ -72,22 +59,46 @@ public class BinaryHeap {
             }
 
             int temp = binaryHeapArray.get(i);
-            binaryHeapArray.add(binaryHeapArray.get(largestChild));
-            binaryHeapArray.add(temp);
+            binaryHeapArray.set(i, binaryHeapArray.get(largestChild));
+            binaryHeapArray.set(largestChild, temp);
             i = largestChild;
         }
     }
 
+    public int getMax() {
+        int result = binaryHeapArray.get(0);
+
+        binaryHeapArray.set(0, binaryHeapArray.get(binaryHeapArray.size() - 1));
+
+        binaryHeapArray.remove(binaryHeapArray.size() - 1);
+
+        return result;
+    }
+
     public static void main(String[] args) {
-        BinaryHeap binaryHeap = new BinaryHeap();
 
-        binaryHeap.binaryHeapArray = binaryHeap.buildHeap(10);
+        BinaryHeap binaryHeap = new BinaryHeap(10);
 
-        System.out.println(binaryHeap.binaryHeapArray);
+        binaryHeap.insert(20);
+        binaryHeap.insert(11);
+        binaryHeap.insert(15);
+        binaryHeap.insert(6);
+        binaryHeap.insert(9);
+        binaryHeap.insert(7);
+        binaryHeap.insert(8);
+        binaryHeap.insert(1);
+        binaryHeap.insert(3);
+        binaryHeap.insert(5);
 
-        binaryHeap.insertValue(34);
+        binaryHeap.binaryHeapArray.forEach(value -> System.out.print(value + " "));
 
-        System.out.println(binaryHeap.binaryHeapArray);
+        System.out.println();
 
+        System.out.println(binaryHeap.getMax());
+
+        binaryHeap.heapify(0);
+
+        binaryHeap.binaryHeapArray.forEach(value -> System.out.print(value + " "));
     }
 }
+
