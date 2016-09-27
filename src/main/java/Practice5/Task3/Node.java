@@ -2,40 +2,37 @@ package Practice5.Task3;
 
 public class Node {
 
-    private int data;
-    private Node left;
     private Node right;
-    private Node parent;
+    private Node left;
+    private int key;
 
-    public int getData() {
-        return this.data;
-    }
-
-    public void setData(int data) {
-        this.data = data;
-    }
-
-    public Node getLeft() {
-        return this.left;
-    }
-
-    public void setLeft(Node left) {
-        this.left = left;
+    public Node(int k) {
+        key = k;
     }
 
     public Node getRight() {
-        return this.right;
+        return right;
     }
 
     public void setRight(Node right) {
         this.right = right;
     }
 
-    public Node getParent() {
-        return this.parent;
+    public Node getLeft() {
+        return left;
     }
 
-    public void setParent(Node parent) {
-        this.parent = parent;
+    public void setLeft(Node left) {
+        this.left = left;
+    }
+
+    public int getKey() {
+        return key;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(key);
     }
 }
+
