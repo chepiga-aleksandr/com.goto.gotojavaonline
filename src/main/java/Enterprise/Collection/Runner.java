@@ -34,7 +34,7 @@ public class Runner {
 
             for (int j = 0; j < size; j++) {
 
-                list.add(j);
+//                list.add(j);
             }
 
             long finish = System.nanoTime();
