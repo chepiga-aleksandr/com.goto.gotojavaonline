@@ -5,6 +5,7 @@ public class Runner {
         String BASEOFELEMENTS = "0123456789abcdefghijklmnopqrstuvwxyz";
         String[] inputValue = input.split(",");
 
+
         long sum = 0;
         long count = 0;
         for (String element : inputValue) {
@@ -23,6 +24,6 @@ public class Runner {
     }
 
     public static void main(String[] args) {
-        System.out.println(sumBase36("aa,aa"));
+        System.out.println(sumBase36("AA,AA".toLowerCase()));
     }
 }
