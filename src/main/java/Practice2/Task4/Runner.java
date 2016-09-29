@@ -4,19 +4,20 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        int x = convertStringForInt("gaga");
+        int x = convertStringForInt("GAGA");
         System.out.println(x);
     }
 
     public static int convertStringForInt(String stringInput) {
 
-        String BASEOFLETTERS = "abcdefghi";
+        String BASEOFLETTERS = "abcdefghij";
 
         StringBuilder numbers = new StringBuilder();
 
-        int result = 0;
+        int result;
+
         for (int i = 0; i < stringInput.length(); i++) {
-            numbers.append(BASEOFLETTERS.indexOf(stringInput.charAt(i)));
+            numbers.append(BASEOFLETTERS.indexOf(stringInput.toLowerCase().charAt(i)));
         }
 
         result = Integer.parseInt(numbers.toString());
