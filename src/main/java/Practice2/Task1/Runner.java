@@ -3,8 +3,8 @@ package Practice2.Task1;
 public class Runner {
     private static String sumBase36(String input) {
         String BASEOFELEMENTS = "0123456789abcdefghijklmnopqrstuvwxyz";
-        String[] inputValue = input.split(",");
 
+        String[] inputValue = input.toLowerCase().split(",");
 
         long sum = 0;
         long count = 0;
@@ -24,6 +24,6 @@ public class Runner {
     }
 
     public static void main(String[] args) {
-        System.out.println(sumBase36("AA,AA".toLowerCase()));
+        System.out.println(sumBase36("AA,AA"));
     }
 }
