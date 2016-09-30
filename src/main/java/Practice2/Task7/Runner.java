@@ -2,11 +2,13 @@ package Practice2.Task7;
 
 public class Runner {
 
-    public static String sumBinaryNumbers(String number) {
+    public static String sumBinaryNumbers(String number1, String number2) {
 
-        String[] inputValue = number.split(",");
+        int numberInt1 = Integer.parseInt(number1,2);
 
-        int sumDec = Integer.parseInt(inputValue[0], 2) + Integer.parseInt(inputValue[1], 2);
+        int numberInt2 = Integer.parseInt(number2,2);
+
+        int sumDec = numberInt1 + numberInt2;
 
         String sumBinary = Integer.toBinaryString(sumDec);
 
@@ -15,7 +17,7 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        String result = sumBinaryNumbers("101,100");
+        String result = sumBinaryNumbers("101", "100");
         System.out.println(result);
     }
 }
