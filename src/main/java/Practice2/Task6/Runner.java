@@ -6,9 +6,7 @@ public class Runner {
 
         StringBuilder number = new StringBuilder(inputString);
 
-        System.out.println(number.toString());
-
-        number.setCharAt(3, '0');
+        number.setCharAt(x, '0');
 
         return number.toString();
     }
@@ -16,6 +14,7 @@ public class Runner {
     public static void main(String[] args) {
 
         String result = replacedBit("11111111", 3);
+
         System.out.println(result);
     }
 }
