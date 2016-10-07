@@ -1,6 +1,5 @@
 package module9;
 
-import com.sun.org.apache.xpath.internal.operations.Equals;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

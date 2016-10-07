@@ -3,7 +3,7 @@ package Practice1.Task3;
 public class Runner {
 
     public static void main(String[] args) {
-        int[] arr = {2, 6, 8, 2, -4, -6, -8};
+        int[] arr = {2, 6, 2, 2, -4, -6, -8};
 
         for (int i = 0; i < arr.length; i++) {
 

@@ -2,6 +2,8 @@ package Practice2.Task1;
 
 public class Runner {
     private static String sumBase36(String input) {
+
+
         String BASEOFELEMENTS = "0123456789abcdefghijklmnopqrstuvwxyz";
 
         String[] inputValue = input.toLowerCase().split(",");

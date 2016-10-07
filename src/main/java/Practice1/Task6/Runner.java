@@ -18,6 +18,7 @@ public class Runner {
         int size = matrix.length;
 
         int[] matrixNew = new int[size * size];
+
         int index = 0;
 
         if ((size % 2) == 0) {

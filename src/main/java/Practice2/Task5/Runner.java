@@ -5,7 +5,7 @@ public class Runner {
     public static int returnAmountBits(String input) {
 
         StringBuilder numbers = new StringBuilder();
-        int result = 0;
+        int result;
 
         for (int i = 0; i < input.length(); i++) {
 

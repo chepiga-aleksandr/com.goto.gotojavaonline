@@ -1,6 +1,6 @@
 //package module4.updateFigures;
 //
-//public class Runner {
+//public class BinaryHeap {
 //
 //    public static void main(String[] args) {
 //

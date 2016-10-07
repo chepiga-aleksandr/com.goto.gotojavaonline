@@ -1,20 +1,17 @@
-package Enterprise.Multithreaded1.Test;
+package Enterprise.Multithreaded1.TestMulti1;
 
 public class CountDownLatch {
 
     private int counter = 0;
-    private final Object lock = new Object();
 
-    public static void main(String[] args) {
-        new LatchBootStrap().test();
-    }
+    private final Object lock = new Object();
 
     public CountDownLatch(int counter) {
         this.counter = counter;
     }
 
-
     public void await() throws InterruptedException {
+
         synchronized (lock) {
             if (counter > 0) {
                 lock.wait();
@@ -24,11 +21,11 @@ public class CountDownLatch {
 
     public void countDown() {
         synchronized (lock) {
+
             if (counter > 0) {
                 counter--;
                 System.out.println("Counter = " + counter);
             }
-
             if (counter == 0) {
                 lock.notifyAll();
             }
