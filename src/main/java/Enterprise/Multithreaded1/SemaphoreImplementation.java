@@ -1,9 +1,7 @@
 package Enterprise.Multithreaded1;
 
 public class SemaphoreImplementation implements SemaphoreInterface {
-
     private volatile int permits;
-
     private final Object lock = new Object();
 
     public SemaphoreImplementation(int permits) {
@@ -25,7 +23,7 @@ public class SemaphoreImplementation implements SemaphoreInterface {
     public void release() throws InterruptedException {
         synchronized (lock) {
             permits++;
-            System.out.println("После release разрешений " + " " + permits );
+            System.out.println("После release разрешений " + permits );
             lock.notify();
         }
     }
@@ -38,6 +36,10 @@ public class SemaphoreImplementation implements SemaphoreInterface {
     @Override
     public void acquire(int permits) throws InterruptedException {
         synchronized (lock) {
+
+            if (permits <= getAvailablePermits()){
+
+            }
             while (this.permits < permits) {
                 lock.wait();
             }
