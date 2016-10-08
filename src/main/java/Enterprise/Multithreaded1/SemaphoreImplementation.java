@@ -1,59 +1,53 @@
 package Enterprise.Multithreaded1;
 
 public class SemaphoreImplementation implements SemaphoreInterface {
-    private volatile int permits;
+    private volatile int availablePermits;
     private final Object lock = new Object();
 
     public SemaphoreImplementation(int permits) {
-        this.permits = permits;
+        availablePermits = permits;
     }
 
     @Override
     public void acquire() throws InterruptedException {
         synchronized (lock) {
-            while (permits == 0) {
+            while (availablePermits == 0) {
                 lock.wait();
             }
-            permits--;
-            System.out.println("Осталось разрешений " + permits);
+            availablePermits--;
+            System.out.println("Осталось разрешений " + availablePermits);
         }
     }
 
     @Override
     public void release() throws InterruptedException {
         synchronized (lock) {
-            permits++;
-            System.out.println("После release разрешений " + permits );
+            availablePermits++;
+            System.out.println("После release разрешений " + availablePermits);
             lock.notify();
         }
     }
 
     @Override
     public int getAvailablePermits() {
-        return permits;
+        return availablePermits;
     }
 
     @Override
     public void acquire(int permits) throws InterruptedException {
         synchronized (lock) {
-
-            if (permits <= getAvailablePermits()){
-
-            }
-            while (this.permits < permits) {
+            while (getAvailablePermits() < permits) {
                 lock.wait();
             }
-            this.permits--;
+            availablePermits -= permits;
         }
     }
 
     @Override
     public void release(int permits) throws InterruptedException {
         synchronized (lock) {
-            this.permits += permits;
-            for (int i = 0; i < permits; i++) {
-                lock.notify();
-            }
+            availablePermits += permits;
+            lock.notifyAll();
         }
     }
 }
