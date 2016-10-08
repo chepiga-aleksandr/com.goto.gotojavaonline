@@ -1,5 +1,7 @@
 package Enterprise.Collection;
 
+import Enterprise.Collection.Enterprise;
+
 import java.util.Random;
 import java.util.Set;
 

@@ -12,10 +12,7 @@ public class Runner {
 
     public static void main(String[] args) {
 
-        final int SIZETABLEFORLIST = 8;
-        final int SIZETABLEFORSET = 5;
-
-        int[] arraySizeOfList = {10000};
+        int[] arraySizeOfList = {10000,100000,1000000};
         int sizeOfList = arraySizeOfList.length;
 
         int numberOfTest = 100;
