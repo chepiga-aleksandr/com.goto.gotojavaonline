@@ -1,5 +1,6 @@
 package Generics;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class Runner {
         numberExecutor.addTask(new IntegerTask(20), new NumbersValidator());
 
         numberExecutor.execute();
+
 
         //numberExecutor.addTask(new IntegerTask(20));
 

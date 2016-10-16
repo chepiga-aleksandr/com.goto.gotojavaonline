@@ -31,7 +31,7 @@ public class NumbersExecutor implements Executor<Number>{
 
     @Override
     public void execute() {
-        Validator<Number> validator = new NumbersValidator();
+        NumbersValidator validator = new NumbersValidator();
 
         for (Task<? extends Number> task : taskList) {
             task.execute();
