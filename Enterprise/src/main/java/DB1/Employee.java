@@ -1,8 +1,5 @@
 package DB1;
 
-/**
- * Created by alex on 19.10.2016.
- */
 public class Employee {
 
     private int id;
